@@ -5,7 +5,7 @@
   "main": "none",
   "scripts": {
     "test": "lerna run test",
-    "build:packages": "lerna run --parallel watch",
+    "watch:packages": "lerna run --parallel watch",
     "clean": "lerna clean --yes && rm -rf node_modules"
   },
   "author": "Patrick <patrick@dreadful.design>",

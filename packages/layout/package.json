@@ -7,7 +7,7 @@
   "scripts": {
     "test": "jest",
     "test:watch": "jest --watch",
-    "watch": "microbundle"
+    "watch": "microbundle watch --no-compress"
   },
   "author": "Patrick <patrick@dreadful.design>",
   "license": "MIT",

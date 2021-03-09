@@ -1,5 +1,7 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 
 export default function Component(props: any) {
-  return;
+  const [open, setOpen] = useState(false);
+  useEffect(() => {}, []);
+  return open;
 }
