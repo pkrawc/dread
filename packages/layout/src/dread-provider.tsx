@@ -4,7 +4,18 @@ import systemCss from "@styled-system/css"
 
 const dreadTheme = {
   colors: {
-    ui: ["#ffffff", "#bbbbbb", "#949494", "#00000"],
+    ui: {
+      "100": "#ffffff",
+      "300": "#bbbbbb",
+      "500": "#949494",
+      "700": "#636363",
+      "900": "#333333",
+    },
+  },
+  space: [0, 4, 8, 12, 24, 36, 48, 60, 72, 84, 96],
+  fonts: {
+    body: "system-ui, sans-serif",
+    monospace: "Menlo, monospace",
   },
   fontSizes: {
     base: "12px",
@@ -14,7 +25,6 @@ const dreadTheme = {
     headline: "4rem",
     hero: "5rem",
   },
-  space: [0, 4, 8, 12, 24, 36, 48, 60, 72, 84, 96],
 }
 
 export const sx = ({ sx = {} }: { sx?: any }) => {
@@ -68,6 +78,7 @@ export const Base = createGlobalStyle(
     body {
       --base-size: ${theme.fontSizes.base};
       font-size: ${theme.fontSizes.body};
+      font-family: ${theme.fonts.body};
     }
   `
 )

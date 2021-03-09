@@ -4,11 +4,20 @@ import { CSSObject, CSSProp } from "styled-components"
 declare module "styled-components" {
   export interface DefaultTheme {
     colors: {
-      ui: string[]
+      ui: {
+        100: string
+        300: string
+        500: string
+        700: string
+        900: string
+      }
     }
 
     space: number[]
-
+    fonts: {
+      body: string
+      monospace: string
+    }
     fontSizes: {
       base: string
       body: string

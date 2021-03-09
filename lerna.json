@@ -1,11 +1,14 @@
 {
   "version": "independent",
+  "registry": "https://registry.npmjs.org/",
+  "useWorkspaces": true,
   "packages": [
     "packages/*"
   ],
   "command": {
     "bootstrap": {
-      "hoist": true
+      "hoist": true,
+      "npmClientArgs": ["--no-package-lock"]
     }
   }
 }

@@ -3,13 +3,14 @@
   "name": "dread",
   "description": "Dreadful design system monorepo",
   "scripts": {
-    "test": "lerna run test",
+    "bootstrap": "npm install && lerna bootstrap",
+    "build:packages": "lerna run --stream build",
     "build:storybook": "build-storybook",
     "clean": "lerna clean --yes && rm -rf node_modules",
-    "bootstrap": "lerna bootstrap --use-workspaces",
-    "start:storybook": "start-storybook -p 8080 --quiet",
+    "start": "npm run build:packages && npm run start:storybook",
     "start:packages": "lerna run --parallel watch",
-    "start": "concurrently -n microbundle,storybook \"npm run start:packages\" \"npm run start:storybook\""
+    "start:storybook": "start-storybook -p 8080 --quiet",
+    "test": "jest"
   },
   "author": "Patrick <patrick@dreadful.design>",
   "license": "MIT",

@@ -2,12 +2,14 @@
   "name": "@dread/layout",
   "version": "1.0.0",
   "description": "layout components for dread design system.",
-  "main": "dist/index.js",
   "source": "src/index.ts",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "scripts": {
     "test": "jest",
-    "test:watch": "jest --watch",
-    "watch": "microbundle watch --no-compress --jsx React.createElement"
+    "build": "microbundle --jsx React.createElement",
+    "watch": "microbundle watch --no-compress --jsx React.createElement",
+    "watch:test": "jest --watch"
   },
   "author": "Patrick <patrick@dreadful.design>",
   "license": "MIT",
