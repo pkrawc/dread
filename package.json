@@ -1,12 +1,12 @@
 {
+  "private": true,
   "name": "dread",
-  "version": "0.0.0",
-  "description": "Dreadful monorepo",
-  "main": "none",
+  "description": "Dreadful design system monorepo",
   "scripts": {
     "test": "lerna run test",
-    "watch:packages": "lerna run --parallel watch",
-    "clean": "lerna clean --yes && rm -rf node_modules"
+    "watch": "lerna run --parallel watch",
+    "clean": "lerna clean --yes && rm -rf node_modules",
+    "bootstrap": "lerna bootstrap --use-workspaces"
   },
   "author": "Patrick <patrick@dreadful.design>",
   "license": "MIT",
@@ -16,6 +16,7 @@
     "@types/styled-components": "^5.1.7",
     "lerna": "^4.0.0",
     "microbundle": "^0.13.0",
+    "prettier": "^2.2.1",
     "typescript": "^4.2.3"
   },
   "workspaces": {
@@ -29,5 +30,8 @@
       "**/@types/theme-ui/**",
       "**/@types/theme-ui__components"
     ]
+  },
+  "prettier": {
+    "semi": false
   }
 }
