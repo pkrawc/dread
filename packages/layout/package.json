@@ -1,0 +1,19 @@
+{
+  "name": "@dread/layout",
+  "version": "1.0.0",
+  "description": "layout components for dread design system.",
+  "main": "dist/index.js",
+  "source": "src/index.ts",
+  "scripts": {
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "watch": "microbundle"
+  },
+  "author": "Patrick <patrick@dreadful.design>",
+  "license": "MIT",
+  "peerDependencies": {
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1",
+    "styled-components": "^5.2.1"
+  }
+}

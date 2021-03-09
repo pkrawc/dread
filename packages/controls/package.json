@@ -1,0 +1,16 @@
+{
+  "name": "@dread/controls",
+  "version": "1.0.0",
+  "description": "User controls for dread design system",
+  "main": "build/index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "author": "Patrick <patrick@dreadful.design>",
+  "license": "MIT",
+  "peerDependencies": {
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1",
+    "styled-components": "^5.2.1"
+  }
+}
