@@ -3,11 +3,12 @@
   "name": "dread",
   "description": "Dreadful design system monorepo",
   "scripts": {
+    "add:package": "ts-node ./scripts/add-package.ts",
     "bootstrap": "npm install && lerna bootstrap",
     "build:packages": "lerna run --stream build",
     "build:storybook": "build-storybook",
     "clean": "lerna clean --yes && rm -rf node_modules",
-    "start": "npm run build:packages && npm run start:storybook",
+    "start": "concurrently -n microbundle,storybook \"yarn start:packages\" \"yarn start:storybook\"",
     "start:packages": "lerna run --parallel watch",
     "start:storybook": "start-storybook -p 8080 --quiet",
     "test": "jest"
@@ -37,13 +38,17 @@
     "@storybook/react": "^6.1.21",
     "@types/node": "^14.14.32",
     "@types/react": "^17.0.3",
+    "@types/shelljs": "^0.8.8",
     "@types/styled-components": "^5.1.7",
+    "@types/styled-system": "^5.1.10",
     "@types/styled-system__css": "^5.0.14",
     "babel-loader": "^8.2.2",
     "concurrently": "^6.0.0",
     "lerna": "^4.0.0",
     "microbundle": "^0.13.0",
     "prettier": "^2.2.1",
+    "shelljs": "^0.8.4",
+    "ts-node": "^9.1.1",
     "typescript": "^4.2.3"
   },
   "dependencies": {

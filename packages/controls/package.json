@@ -1,13 +1,27 @@
+
 {
-  "name": "@dread/controls",
-  "version": "1.0.0",
-  "description": "User controls for dread design system",
-  "main": "build/index.js",
-  "scripts": {
-    "test": "jest"
-  },
-  "author": "Patrick <patrick@dreadful.design>",
   "license": "MIT",
+  "name": "@dread/controls",
+  "version": "0.0.1",
+  "description": "Control",
+  "source": "src/index.ts",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "test": "jest",
+    "build": "microbundle --jsx React.createElement",
+    "watch": "microbundle watch --no-compress --jsx React.createElement",
+    "watch:test": "jest --watch"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "contributors": [
+    "Patrick <patrick@dreadful.design>"
+  ],
   "peerDependencies": {
     "react": "^17.0.1",
     "react-dom": "^17.0.1",

@@ -12,7 +12,7 @@ const dreadTheme = {
       "900": "#333333",
     },
   },
-  space: [0, 4, 8, 12, 24, 36, 48, 60, 72, 84, 96],
+  space: [0, 8, 12, 24, 36, 48, 60, 72, 84, 96, 108, 120],
   fonts: {
     body: "system-ui, sans-serif",
     monospace: "Menlo, monospace",
