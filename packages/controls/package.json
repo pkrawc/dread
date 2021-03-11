@@ -1,4 +1,3 @@
-
 {
   "license": "MIT",
   "name": "@dread/controls",
@@ -26,5 +25,8 @@
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "styled-components": "^5.2.1"
+  },
+  "dependencies": {
+    "@dread/layout": "^1.0.0"
   }
 }
