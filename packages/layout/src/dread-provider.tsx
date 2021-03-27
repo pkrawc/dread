@@ -1,6 +1,10 @@
 import React, { PropsWithChildren } from "react"
 import { createGlobalStyle, ThemeProvider, css } from "styled-components"
-import systemCss from "@styled-system/css"
+import systemCss, { SystemStyleObject } from "@styled-system/css"
+
+/**
+ * TODO: Create a theme merging tool that will recurrsively merge custom and default themes.
+ */
 
 const dreadTheme = {
   colors: {
@@ -18,20 +22,44 @@ const dreadTheme = {
     monospace: "Menlo, monospace",
   },
   fontSizes: {
-    base: "12px",
+    small: "1rem",
     body: "1.5rem",
     subtitle: "2rem",
     title: "3rem",
     headline: "4rem",
     hero: "5rem",
   },
+  lineHeights: {
+    body: "1.334",
+    heading: "1.5",
+  },
+  text: {
+    button: {
+      fontSize: "body",
+      fontWeight: "bold",
+      lineHeight: "body",
+    },
+    body: {
+      fontSize: "body",
+      fontWeight: "normal",
+      lineHeight: "body",
+    },
+    subtitle: {
+      fontSize: "subtitle",
+      fontWeight: "bold",
+      lineHeight: "heading",
+    },
+  },
 }
 
-export const sx = ({ sx = {} }: { sx?: any }) => {
+type SXObject = SystemStyleObject & { text?: string | string[] }
+
+export const sx = ({ sx = {} }: { sx?: SXObject }) => {
   const { text, ...styleProps } = sx
   if (text) {
+    const textArray = Array.isArray(text) ? text : [text]
     return systemCss({
-      variant: [...text].map((txt) => `text.${txt}`),
+      variant: textArray.map((txt) => `text.${txt}`),
       ...styleProps,
     })
   }
@@ -41,7 +69,7 @@ export const sx = ({ sx = {} }: { sx?: any }) => {
 export const Base = createGlobalStyle(
   ({ theme }) => css`
     :root {
-      font-size: ${theme.fontSizes.base};
+      font-size: ${theme.space[2]}px;
     }
     html,
     body,
@@ -76,7 +104,7 @@ export const Base = createGlobalStyle(
       height: 100%;
     }
     body {
-      --base-size: ${theme.fontSizes.base};
+      --base-size: ${theme.space[2]}px;
       font-size: ${theme.fontSizes.body};
       font-family: ${theme.fonts.body};
     }
@@ -84,7 +112,7 @@ export const Base = createGlobalStyle(
 )
 
 interface ProviderProps {
-  theme?: any
+  theme?: Partial<typeof dreadTheme>
 }
 
 export function DreadProvider({

@@ -1,20 +1,20 @@
 {
+  "license": "MIT",
   "private": true,
   "name": "dread",
   "description": "Dreadful design system monorepo",
   "scripts": {
-    "add:package": "ts-node ./scripts/add-package.ts",
     "bootstrap": "npm install && lerna bootstrap",
     "build:packages": "lerna run --stream build",
     "build:storybook": "build-storybook",
     "clean": "lerna clean --yes && rm -rf node_modules",
+    "create": "ts-node ./scripts/create-package.ts",
     "start": "concurrently -n microbundle,storybook \"yarn start:packages\" \"yarn start:storybook\"",
     "start:packages": "lerna run --parallel watch",
     "start:storybook": "start-storybook -p 8080 --quiet",
     "test": "jest"
   },
   "author": "Patrick <patrick@dreadful.design>",
-  "license": "MIT",
   "workspaces": {
     "packages": [
       "packages/*"

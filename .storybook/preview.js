@@ -1,4 +1,5 @@
 import { DreadProvider } from "@dread/layout"
+import "./storybook-reset.css"
 
 export const parameters = {
   actions: { argTypesRegex: "^on[A-Z].*" },

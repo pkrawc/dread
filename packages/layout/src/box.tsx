@@ -1,8 +1,9 @@
 import { CSSObject } from "@styled-system/css"
+import { HTMLAttributes } from "react"
 import styled from "styled-components"
 import { sx } from "./dread-provider"
 
-interface BoxProps {
+interface BoxProps extends HTMLAttributes<HTMLElement> {
   sx?: CSSObject
 }
 

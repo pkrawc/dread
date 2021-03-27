@@ -5,7 +5,11 @@ export default {
 }
 
 export function BoxUsage() {
-  return <Box sx={{ mt: "4rem", bg: "ui.300" }}>Hello World</Box>
+  return (
+    <Box as="figure" sx={{ mt: "4rem", bg: "ui.300" }}>
+      Hello World
+    </Box>
+  )
 }
 
 export function ContainerUsage() {

@@ -14,12 +14,19 @@ declare module "styled-components" {
     }
 
     space: number[]
+
     fonts: {
       body: string
       monospace: string
     }
+
+    lineHeights: {
+      body: string
+      heading: string
+    }
+
     fontSizes: {
-      base: string
+      small: string
       body: string
       subtitle: string
       title: string
