@@ -1,16 +1,12 @@
-import { CSSObject } from "@styled-system/css"
+import css from "@styled-system/css"
 import styled from "styled-components"
-import { layout, LayoutProps, space, SpaceProps } from "styled-system"
-import { sx } from "./dread-provider"
+import { sx, SXObject } from "./dread-provider"
 
-interface ContainerProps extends LayoutProps, SpaceProps {
-  sx?: CSSObject
+interface ContainerProps {
+  sx?: SXObject
 }
 
-export const Container = styled.section<ContainerProps>(space, layout, sx)
-
-Container.defaultProps = {
-  maxWidth: "90rem",
-  mx: "auto",
-  px: "2rem",
-}
+export const Container = styled.section<ContainerProps>(
+  css({ maxWidth: "80rem", mx: "auto", px: "2rem" }),
+  sx
+)

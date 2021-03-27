@@ -1,15 +1,15 @@
-import { CSSObject } from "@styled-system/css"
+import css from "@styled-system/css"
 import styled from "styled-components"
-import { system, grid, GridProps } from "styled-system"
-import { sx } from "./dread-provider"
+import { system } from "styled-system"
+import { sx, SXObject } from "./dread-provider"
 
-interface GridContainerProps extends GridProps {
+interface GridContainerProps {
   columns?: number
-  sx?: CSSObject
+  sx?: SXObject
 }
 
 export const Grid = styled.section<GridContainerProps>(
-  { display: "grid" },
+  css({ display: "grid", gap: 3 }),
   system({
     columns: {
       property: "gridTemplateColumns",
@@ -18,18 +18,16 @@ export const Grid = styled.section<GridContainerProps>(
       },
     },
   }),
-  grid,
   sx
 )
 
 Grid.defaultProps = {
   columns: 12,
-  gridGap: 3,
 }
 
 interface ColProps {
   span?: string | number | (string | number)[]
-  sx?: CSSObject
+  sx?: SXObject
 }
 
 export const Col = styled.section<ColProps>(
