@@ -5,7 +5,8 @@
   "description": "Dreadful design system monorepo",
   "scripts": {
     "bootstrap": "npm install && lerna bootstrap",
-    "build:packages": "lerna run --stream build",
+    "build": "lerna run --stream build",
+    "build:dev": "lerna run --stream build:dev",
     "build:storybook": "build-storybook",
     "clean": "lerna clean --yes && rm -rf node_modules",
     "create": "ts-node ./scripts/create-package.ts",

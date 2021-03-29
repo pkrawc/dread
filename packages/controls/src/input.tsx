@@ -91,6 +91,7 @@ export function Input({ sx = {}, className, ...props }: InputProps) {
           sx={{
             color: "error",
             mr: "auto",
+            text: "small",
           }}
         >
           {error}
@@ -103,6 +104,8 @@ export function Input({ sx = {}, className, ...props }: InputProps) {
             color: "textSecondary",
             ml: "auto",
             maxWidth: "100%",
+            textAlign: "right",
+            text: "small",
           }}
         >
           {help}

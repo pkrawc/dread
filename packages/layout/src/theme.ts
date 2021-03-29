@@ -42,10 +42,16 @@ export const dreadTheme = {
     hero: "5rem",
   },
   lineHeights: {
+    small: "2",
     body: "1.334",
     heading: "1.5",
   },
   text: {
+    small: {
+      fontSize: "small",
+      fontWeight: "normal",
+      lineHeight: "small",
+    },
     button: {
       fontSize: "body",
       fontWeight: "bold",
@@ -59,6 +65,21 @@ export const dreadTheme = {
     subtitle: {
       fontSize: "subtitle",
       fontWeight: "bold",
+      lineHeight: "heading",
+    },
+    title: {
+      fontSize: "title",
+      fontWeight: "normal",
+      lineHeight: "heading",
+    },
+    headline: {
+      fontSize: "headline",
+      fontWeight: "normal",
+      lineHeight: "heading",
+    },
+    hero: {
+      fontSize: "hero",
+      fontWeight: "lighter",
       lineHeight: "heading",
     },
   },

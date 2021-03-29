@@ -5,9 +5,6 @@ export default { title: "Packages/Controls" }
 
 export function ControlsUsage() {
   const [error, setError] = useState(null)
-  const errorText = `
-    Wrong first name.
-  `
   function handleSubmit(e: FormEvent) {
     e.preventDefault()
     const target = e.target as HTMLFormElement
@@ -21,20 +18,23 @@ export function ControlsUsage() {
         <Col
           span={[12, 6]}
           as={Input}
-          label="First Name"
-          name="first-name"
+          label="Email"
+          name="email"
           error={error}
           onBlur={({ target }: FocusEvent<HTMLInputElement>) => {
-            setError(target.value.length ? errorText : null)
+            const emailCheck = /^\S+@\S+\.\S+$/
+            const validEmail = emailCheck.test(target.value)
+            setError(validEmail ? null : "Not a valid email")
           }}
           onFocus={() => setError(null)}
         />
         <Col
           span={[12, 6]}
           as={Input}
-          label="Last Name"
-          name="last-name"
-          help="Enter your last name."
+          label="Password"
+          name="new-password"
+          type="password"
+          help="Must contain 8 characters and at least 1 number."
         />
         <Col sx={{ display: "flex", flexDirection: "column", gap: "2rem" }}>
           <Switch label="Get fun emails." />
@@ -43,13 +43,12 @@ export function ControlsUsage() {
         </Col>
         <Col>
           <Box as="p" sx={{ mb: "1rem", text: "subtitle" }}>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            Accept Dread's terms of service to use our service.
           </Box>
           <Box as="p" sx={{ mb: "2rem" }}>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia, earum
-            odit doloremque hic velit officiis! Fugiat laudantium commodi dolore
-            ipsum voluptate eveniet autem, fugit adipisci corporis nam eius?
-            Impedit, eos!
+            By creating an account, you agree to our Terms and Privacy Policy.
+            Avail may keep you informed with personalized communications about
+            your account and you will be able to opt-out at any time.
           </Box>
           <Checkbox
             name="tos-accept"

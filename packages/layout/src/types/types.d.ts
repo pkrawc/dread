@@ -1,6 +1,6 @@
 import "styled-components"
-import { SXObject } from "./src/dread-provider"
-import { dreadTheme } from "./src/theme"
+import { SXObject } from "../dread-provider"
+import { dreadTheme } from "../theme"
 
 type DreadTheme = typeof dreadTheme
 declare module "styled-components" {
