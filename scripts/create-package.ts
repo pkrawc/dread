@@ -7,7 +7,7 @@ const packageName = process.argv[2]
 if (!packageName) throw Error("Must contain a name argument.")
 
 const description =
-  process.argv[3] || `Avail design system package for ${packageName}`
+  process.argv[3] || `Dread design system package for ${packageName}`
 
 const packageJson = `
 {

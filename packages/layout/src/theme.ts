@@ -1,12 +1,32 @@
+const uiColors = {
+  "00": "#F2F2F2",
+  "02": "#E0E0E0",
+  "04": "#BDBDBD",
+  "06": "#828282",
+  "08": "#4F4F4F",
+  "10": "#222222",
+}
+
+enum StyleType {
+  Normal = "normal",
+  Sharp = "sharp",
+  Rounded = "rounded",
+}
+
 export const dreadTheme = {
+  style: "normal" as StyleType,
   colors: {
-    ui: {
-      "100": "#ffffff",
-      "300": "#bbbbbb",
-      "500": "#949494",
-      "700": "#636363",
-      "900": "#333333",
-    },
+    ui: uiColors,
+    primary: uiColors["08"],
+    primaryDark: uiColors["10"],
+    secondary: uiColors["02"],
+    secondaryDark: uiColors["04"],
+    text: uiColors["10"],
+    textSecondary: uiColors["06"],
+    bg: uiColors["00"],
+    bgSecondary: uiColors["02"],
+    accent: "#55efc4",
+    error: "#d63031",
   },
   space: [0, 8, 12, 24, 36, 48, 60, 72, 84, 96, 108, 120],
   fonts: {

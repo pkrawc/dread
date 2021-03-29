@@ -7,9 +7,9 @@ export const parameters = {
   backgrounds: {
     default: "light",
     values: [
-      { name: "app", value: "#f3f3f3" },
-      { name: "light", value: "#fff" },
-      { name: "dark", value: "#2d2d2d" },
+      { name: "app", value: "#E0E0E0" },
+      { name: "light", value: "#F2F2F2" },
+      { name: "dark", value: "#222222" },
     ],
   },
 }
