@@ -1,6 +1,6 @@
-import { ChangeEvent, FocusEvent, FormEvent, useState } from "react"
+import { FocusEvent, FormEvent, useState } from "react"
 import { Box, Container, Grid, Col } from "@dread/layout"
-import { Input, Button, Checkbox, Switch } from "./src"
+import { Input, Button, Checkbox, Switch, Slider } from "./src"
 export default { title: "Packages/Controls" }
 
 export function ControlsUsage() {
@@ -14,6 +14,9 @@ export function ControlsUsage() {
 
   return (
     <Container sx={{ mt: "2rem" }}>
+      <Box as="h2" sx={{ mt: "8rem", mb: "4rem" }}>
+        Sign up for a new account.
+      </Box>
       <Grid as="form" onSubmit={handleSubmit}>
         <Col
           span={[12, 6]}
@@ -34,16 +37,28 @@ export function ControlsUsage() {
           label="Password"
           name="new-password"
           type="password"
-          help="Must contain 8 characters and at least 1 number."
+          help="Must contain at least 8 characters and at least 1 number."
         />
         <Col sx={{ display: "flex", flexDirection: "column", gap: "2rem" }}>
-          <Switch label="Get fun emails." />
-          <Switch label="Get less fun emails." />
-          <Switch label="Get emails that you probably won't like." />
+          <Switch
+            name="email-basic"
+            label="Get account updates and new ways to use your account."
+          />
+          <Switch
+            name="email-newsletter"
+            label="Get tips and tricks about property management right in your inbox."
+          />
+          <Switch
+            name="email-update"
+            label="Get a monthly update about your portfolio."
+          />
+        </Col>
+        <Col>
+          <Slider />
         </Col>
         <Col>
           <Box as="p" sx={{ mb: "1rem", text: "subtitle" }}>
-            Accept Dread's terms of service to use our service.
+            Accept Dread's terms to use our service.
           </Box>
           <Box as="p" sx={{ mb: "2rem" }}>
             By creating an account, you agree to our Terms and Privacy Policy.
@@ -53,28 +68,18 @@ export function ControlsUsage() {
           <Checkbox
             name="tos-accept"
             label="I agree to the terms and privacy policy."
-            onChange={({ target }: ChangeEvent<HTMLInputElement>) => {
-              console.log(target.checked)
-            }}
           />
         </Col>
-        <Col sx={{ display: "flex", gap: "2rem" }}>
+        <Col
+          sx={{ display: "flex", gap: "2rem", flexDirection: "row-reverse" }}
+        >
           <Button variant="primary" type="submit">
             Button Text
           </Button>
           <Button>Secondary Button</Button>
+          <Button variant="subtle">Don't click me</Button>
         </Col>
       </Grid>
-    </Container>
-  )
-}
-
-export function ButtonUsage() {
-  return (
-    <Container sx={{ mt: "2rem" }}>
-      <Button>Button Text</Button>
-      <Button variant="primary">Button Text</Button>
-      <Button variant="subtle">Button Text</Button>
     </Container>
   )
 }
