@@ -4,19 +4,23 @@
   "name": "dread",
   "description": "Dreadful design system monorepo",
   "scripts": {
-    "bootstrap": "npm install && lerna bootstrap",
-    "build": "lerna run --stream build",
+    "bootstrap": "yarn && lerna bootstrap",
+    "build": "lerna run --stream build --ignore @dread/portfolio",
     "build:dev": "lerna run --stream build:dev",
     "build:storybook": "build-storybook",
     "clean": "lerna clean --yes && rm -rf node_modules",
     "create": "ts-node ./scripts/create-package.ts",
     "start": "concurrently -n microbundle,storybook \"yarn start:packages\" \"yarn start:storybook\"",
     "start:packages": "lerna run --parallel watch",
+    "start:portfolio": "lerna run --stream --scope @dread/portfolio dev",
     "start:storybook": "start-storybook --port 8080 --quiet",
     "test": "jest"
   },
   "author": "Patrick <patrick@dreadful.design>",
-  "workspaces": ["packages/*", "portfolio"],
+  "workspaces": [
+    "packages/*",
+    "portfolio"
+  ],
   "prettier": {
     "semi": false
   },
@@ -37,13 +41,11 @@
     "lerna": "^4.0.0",
     "microbundle": "^0.13.0",
     "prettier": "^2.2.1",
-    "shelljs": "^0.8.4",
-    "ts-node": "^9.1.1",
-    "typescript": "^4.2.3"
-  },
-  "dependencies": {
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
-    "styled-components": "^5.2.1"
+    "shelljs": "^0.8.4",
+    "styled-components": "^5.2.3",
+    "ts-node": "^9.1.1",
+    "typescript": "^4.2.3"
   }
 }

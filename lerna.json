@@ -1,13 +1,26 @@
 {
   "version": "independent",
+  "npmClient": "yarn",
   "registry": "https://registry.npmjs.org/",
   "useWorkspaces": true,
   "packages": [
-    "packages/*"
+    "packages/*",
+    "portfolio"
   ],
   "command": {
-    "bootstrap": {
-      "hoist": true
+    "publish": {
+      "conventionalCommits": true,
+      "message": "chore(release): publish"
+    },
+    "version": {
+      "conventialCommits": true
     }
-  }
+  },
+  "ignoreChanges:": [
+    "**/node_modules/**",
+    "**/dist/**",
+    "**/CHANGELOG.md",
+    "**/*.stories.tsx"
+  ]
 }
+

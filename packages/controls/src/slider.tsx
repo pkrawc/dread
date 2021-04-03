@@ -1,4 +1,4 @@
-import { Box, SXObject } from "@dread/layout"
+import { Box, SXObject } from "@dread/core"
 import { wrapEvent } from "@dread/utils"
 import { InputHTMLAttributes } from "react"
 

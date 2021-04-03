@@ -1,6 +1,6 @@
 import { InputHTMLAttributes } from "react"
 import clsx from "clsx"
-import { Box, SXObject } from "@dread/layout"
+import { Box, SXObject } from "@dread/core"
 import { useInput } from "./use-controls"
 
 interface InputProps extends InputHTMLAttributes<HTMLInputElement> {

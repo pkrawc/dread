@@ -1,2 +1,8 @@
-dist
+# Pacakge Manager
 node_modules
+
+# Package Files
+dist
+
+# Portfolio Files
+.next

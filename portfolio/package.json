@@ -3,9 +3,23 @@
   "private": true,
   "name": "@dread/portfolio",
   "author": "Patrick <patrick@dreadful.design>",
+  "scripts": {
+    "dev": "next",
+    "start": "next start",
+    "build": "next build"
+  },
   "dependencies": {
+    "@dread/controls": "*",
+    "@dread/core": "*",
+    "@dread/utils": "*",
+    "glob": "^7.1.6",
+    "gray-matter": "^4.0.2",
     "next": "^10.1.2",
+    "next-mdx-remote": "^2.1.3",
+    "next-seo": "^4.23.0",
     "react": "^17.0.2",
-    "react-dom": "^17.0.2"
+    "react-dom": "^17.0.2",
+    "react-ga": "^3.3.0",
+    "styled-components": "^5.2.3"
   }
 }

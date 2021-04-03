@@ -1,5 +1,5 @@
 import { forwardRef, InputHTMLAttributes } from "react"
-import { Box, SXObject } from "@dread/layout"
+import { Box, SXObject } from "@dread/core"
 import { useCheckbox } from "./use-controls"
 
 interface CheckboxProps extends InputHTMLAttributes<HTMLInputElement> {

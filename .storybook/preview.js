@@ -1,4 +1,4 @@
-import { DreadProvider } from "@dread/layout"
+import { DreadProvider } from "@dread/core"
 import "./storybook-reset.css"
 
 export const parameters = {

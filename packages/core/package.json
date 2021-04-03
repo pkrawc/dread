@@ -1,5 +1,5 @@
 {
-  "name": "@dread/layout",
+  "name": "@dread/core",
   "version": "1.0.0",
   "description": "layout components for dread design system.",
   "source": "src/index.ts",

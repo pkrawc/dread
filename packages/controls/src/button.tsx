@@ -1,7 +1,7 @@
 import styled from "styled-components"
 import css from "@styled-system/css"
 import { variant } from "styled-system"
-import { sx, SXObject } from "@dread/layout"
+import { sx, SXObject } from "@dread/core"
 
 interface ButtonProps {
   sx?: SXObject

@@ -1,5 +1,5 @@
 import { FocusEvent, FormEvent, useState } from "react"
-import { Box, Container, Grid, Col } from "@dread/layout"
+import { Box, Container, Grid, Col } from "@dread/core"
 import { Input, Button, Checkbox, Switch, Slider } from "./src"
 export default { title: "Packages/Controls" }
 
