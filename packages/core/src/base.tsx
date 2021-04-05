@@ -5,6 +5,9 @@ export const Base = createGlobalStyle(
     :root {
       font-size: ${theme.space[2]}px;
     }
+    * {
+      box-sizing: border-box;
+    }
     html,
     body,
     div,
