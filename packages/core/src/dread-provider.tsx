@@ -3,6 +3,7 @@ import { ThemeProvider } from "styled-components"
 import css, { SystemStyleObject } from "@styled-system/css"
 import { dreadTheme } from "./theme"
 import { Base } from "./base"
+import { DeepPartial } from "./types"
 
 export type SXObject = SystemStyleObject & { text?: string | string[] }
 
@@ -19,7 +20,7 @@ export const sx = ({ sx = {} }: { sx?: SXObject }) => {
 }
 
 interface ProviderProps {
-  theme?: Partial<typeof dreadTheme>
+  theme?: DeepPartial<typeof dreadTheme>
 }
 
 export function DreadProvider({

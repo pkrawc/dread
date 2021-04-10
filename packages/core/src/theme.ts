@@ -1,3 +1,5 @@
+import { DeepPartial } from "./types"
+
 const uiColors = {
   "00": "#F2F2F2",
   "02": "#E0E0E0",
@@ -12,6 +14,8 @@ enum StyleType {
   Sharp = "sharp",
   Rounded = "rounded",
 }
+
+export type DreadTheme = DeepPartial<typeof dreadTheme>
 
 export const dreadTheme = {
   style: "normal" as StyleType,
@@ -84,3 +88,5 @@ export const dreadTheme = {
     },
   },
 }
+
+function createTheme(customTheme: Partial<typeof dreadTheme>) {}

@@ -112,7 +112,7 @@ function Project({ slug, headline, description }: Project) {
       <Box as="h3" sx={{ text: "title" }}>
         {headline}
       </Box>
-      <Box as="p" sx={{ text: "body" }}>
+      <Box as="p" sx={{ text: "body", mt: "1rem" }}>
         {description}
       </Box>
     </Box>

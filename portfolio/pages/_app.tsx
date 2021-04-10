@@ -14,7 +14,11 @@ export default function App({ Component, pageProps }: AppProps) {
     router.events.on("beforeHistoryChange", (url) => pageview(url))
   }, [])
   return (
-    <DreadProvider>
+    <DreadProvider
+      theme={{
+        fonts: { body: "Crimson Pro" },
+      }}
+    >
       <DefaultSeo {...seo} />
       <Component {...pageProps} />
     </DreadProvider>
