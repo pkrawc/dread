@@ -28,7 +28,7 @@ export function DreadProvider({
   theme: customTheme = {},
   children,
 }: PropsWithChildren<ProviderProps>) {
-  const [colorPreference, setPreference] = useState("light")
+  // const [colorPreference, setPreference] = useState("light")
   const theme = useMemo(() => merge({}, dreadTheme, customTheme), [customTheme])
   return (
     <ThemeProvider theme={theme}>
