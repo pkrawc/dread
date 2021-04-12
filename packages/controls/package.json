@@ -1,11 +1,13 @@
 {
   "name": "@dread/controls",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "Control components for the dreaful design system.",
   "source": "src/index.ts",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
-  "files": [ "dist" ],
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "test": "jest",
     "build": "microbundle --jsx React.createElement",
@@ -25,7 +27,7 @@
   },
   "dependencies": {
     "@dread/core": "^1.0.0",
-    "@dread/utils": "^0.0.1",
+    "@dread/utils": "^0.1.0",
     "clsx": "^1.1.1"
   }
 }
