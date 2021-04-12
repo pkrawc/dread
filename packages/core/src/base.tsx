@@ -1,9 +1,9 @@
 import { createGlobalStyle, css } from "styled-components"
 
 export const Base = createGlobalStyle(
-  ({ theme }) => css`
+  ({ theme: { space, fontSizes, fonts, lineHeights } }) => css`
     :root {
-      font-size: ${theme.space[2]}px;
+      font-size: ${space[2]}px;
     }
     * {
       box-sizing: border-box;
@@ -37,17 +37,34 @@ export const Base = createGlobalStyle(
     }
     html,
     body {
-      width: 100%;
-      height: 100%;
+      block-size: 100%;
+      inline-size: 100%;
     }
     body {
-      --base-size: ${theme.space[2]}px;
-      font-size: ${theme.fontSizes.body};
-      font-family: ${theme.fonts.body};
+      --base-size: ${space[2]}px;
+      font-size: ${fontSizes.body};
+      line-height: ${lineHeights.body};
+      font-family: ${fonts.body};
     }
     pre,
     code {
-      font-family: ${theme.fonts.monospace};
+      font-family: ${fonts.monospace};
+    }
+    h1 {
+      font-size: ${fontSizes.hero};
+    }
+    h2 {
+      font-size: ${fontSizes.headline};
+    }
+    h3 {
+      font-size: ${fontSizes.title};
+    }
+    h4 {
+      font-size: ${fontSizes.subtitle};
+    }
+    h5 {
+      font-size: ${fontSizes.body};
+      font-weight: "bold";
     }
   `
 )

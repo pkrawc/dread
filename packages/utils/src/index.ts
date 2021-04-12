@@ -9,3 +9,7 @@ export function wrapEvent(
     if (!event.defaultPrevented) return additional(event)
   }
 }
+
+export function noop(): void {
+  return
+}

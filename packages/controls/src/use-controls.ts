@@ -1,10 +1,10 @@
 import { ChangeEvent, useState } from "react"
-import { wrapEvent } from "@dread/utils"
+import { wrapEvent, noop } from "@dread/utils"
 
 export function useInput({
   type = "text",
   label,
-  onChange,
+  onChange = noop,
   error = null,
   value,
   help,
@@ -34,22 +34,5 @@ export function useInput({
     helpProps: {
       hidden: error,
     },
-  }
-}
-
-export function useCheckbox({ ref, checked, label, onChange, ...props }: any) {
-  const [isChecked, setChecked] = useState(checked)
-  function handleChange({ target }: ChangeEvent<HTMLInputElement>) {
-    setChecked(target.checked)
-  }
-  return {
-    checked: isChecked,
-    wrapperProps: { ref, tabIndex: 0 },
-    inputProps: {
-      checked,
-      onChange: wrapEvent(onChange, handleChange),
-      ...props,
-    },
-    label,
   }
 }

@@ -70,10 +70,13 @@ export default function HomePage({ projects }: { projects: Project[] }) {
             Experiences that are <s>un</s>forgettable.
           </Box>
           <Box as="p">
-            &#128075; I'm Patrick, a <b>Product Engineer</b> living in{" "}
-            <b>Chicago</b>. My focus is on progressive web apps. You can mess
-            around with some of my experiments to the left or check out some of
-            my products in the wild below.
+            &#128075; I'm Patrick, a{" "}
+            <Definition description="helosldkfj">
+              <b>Product Developer</b>
+            </Definition>{" "}
+            living in <b>Chicago</b>. My focus is on progressive web apps. You
+            can mess around with some of my experiments to the left or check out
+            some of my products in the wild below.
           </Box>
         </Box>
       </Container>
@@ -113,6 +116,17 @@ function Project({ slug, headline, description }: Project) {
         {headline}
       </Box>
       <Box as="p" sx={{ text: "body", mt: "1rem" }}>
+        {description}
+      </Box>
+    </Box>
+  )
+}
+
+function Definition({ children, description }: any) {
+  return (
+    <Box as="span" sx={{ position: "relative" }}>
+      <Box as="span">{children}</Box>
+      <Box as="aside" sx={{ position: "absolute", top: "100%", left: 0 }}>
         {description}
       </Box>
     </Box>

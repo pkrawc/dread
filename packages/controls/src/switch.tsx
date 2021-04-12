@@ -1,60 +1,61 @@
 import { forwardRef, InputHTMLAttributes } from "react"
 import { Box, SXObject } from "@dread/core"
-import { useCheckbox } from "./use-controls"
 
 interface SwitchProps extends InputHTMLAttributes<HTMLInputElement> {
   sx?: SXObject
   label?: string
 }
 
-export const Switch = forwardRef(function Switch(
-  { sx = {}, ...props }: SwitchProps,
+export const Switch = forwardRef<HTMLInputElement, SwitchProps>(function Switch(
+  { sx = {}, label, ...props },
   ref
 ) {
-  const { checked, label, wrapperProps, inputProps } = useCheckbox({
-    ...props,
-    ref,
-  })
   return (
     <Box
-      {...wrapperProps}
       as="label"
-      sx={{ display: label ? "flex" : "inline-flex", ...sx }}
+      sx={{
+        display: label ? "flex" : "inline-flex",
+        "& input:checked ~ .track": {
+          bg: "text",
+        },
+        "& input:checked ~ .track .slider": {
+          bg: "bg",
+          borderColor: "text",
+          transform: "translateX(100%)",
+        },
+        ...sx,
+      }}
     >
+      <Box {...props} ref={ref} as="input" type="checkbox" hidden />
       {label && (
         <Box as="span" sx={{ mr: "auto" }}>
           {label}
         </Box>
       )}
       <Box
-        {...inputProps}
-        as="input"
-        type="checkbox"
-        hidden
-        sx={{ width: 0, height: 0 }}
-      />
-      <Box
         className="track"
         sx={{
           flexShrink: 0,
           width: "4rem",
           height: "2rem",
-          bg: checked ? "text" : "bgSecondary",
           borderRadius: "2rem",
+          bg: "bgSecondary",
           transition: "120ms",
+          willChange: "background-color",
         }}
       >
         <Box
           className="slider"
           sx={{
-            width: "calc(2rem - 8px)",
-            height: "calc(2rem - 8px)",
-            bg: checked ? "bg" : "textSecondary",
+            width: "2rem",
+            height: "2rem",
+            bg: "textSecondary",
             borderRadius: "50%",
             border: "4px solid transparent",
-            borderColor: checked ? "text" : "bgSecondary",
+            borderColor: "bgSecondary",
             transition: "120ms",
-            transform: checked ? "translateX(100%)" : "translateX(0)",
+            transform: "translateX(0)",
+            willChange: "background-color, transform, border-color",
           }}
         />
       </Box>

@@ -1,9 +1,14 @@
 import { FocusEvent, FormEvent, useState } from "react"
 import { Box, Container, Grid, Col } from "@dread/core"
-import { Input, Button, Checkbox, Switch, Slider } from "./src"
+import { Input, Button, Checkbox, Switch, Radio, Chip } from "./src"
+
 export default { title: "Packages/Controls" }
 
-export function ControlsUsage() {
+declare namespace Object {
+  function fromEntries(entries: any): object
+}
+
+export function Controls() {
   const [error, setError] = useState(null)
   function handleSubmit(e: FormEvent) {
     e.preventDefault()
@@ -53,8 +58,17 @@ export function ControlsUsage() {
             label="Get a monthly update about your portfolio."
           />
         </Col>
-        <Col>
-          <Slider />
+        <Col sx={{ display: "flex", gap: "1rem" }}>
+          <Radio name="interest" value="one" />
+          <Radio name="interest" value="two" />
+          <Radio name="interest" value="three" />
+          <Radio name="interest" value="four" />
+        </Col>
+        <Col sx={{ display: "flex", gap: "1rem" }}>
+          <Chip name="thing-1">one</Chip>
+          <Chip name="thing-2">two</Chip>
+          <Chip name="thing-3">three</Chip>
+          <Chip name="thing-4">four</Chip>
         </Col>
         <Col>
           <Box as="p" sx={{ mb: "1rem", text: "subtitle" }}>

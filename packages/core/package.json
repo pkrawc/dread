@@ -5,7 +5,9 @@
   "source": "src/index.ts",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
-  "files": [ "dist" ],
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "test": "jest",
     "build": "microbundle --jsx React.createElement",
@@ -25,6 +27,7 @@
   },
   "dependencies": {
     "@styled-system/css": "^5.1.5",
+    "lodash.merge": "^4.6.2",
     "styled-system": "^5.1.5"
   }
 }

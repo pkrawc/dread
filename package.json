@@ -14,7 +14,9 @@
     "start:packages": "lerna run --parallel watch",
     "start:portfolio": "lerna run --stream --scope @dread/portfolio dev",
     "start:storybook": "start-storybook --port 8080 --quiet",
-    "test": "jest"
+    "test": "jest",
+    "update-version": "lerna version --no-push --no-private",
+    "release": "lerna publish from-package --yes"
   },
   "author": "Patrick <patrick@dreadful.design>",
   "workspaces": [
@@ -30,6 +32,7 @@
     "@storybook/addon-essentials": "^6.1.21",
     "@storybook/addon-links": "^6.1.21",
     "@storybook/react": "^6.1.21",
+    "@types/lodash.merge": "^4.6.6",
     "@types/node": "^14.14.32",
     "@types/react": "^17.0.3",
     "@types/shelljs": "^0.8.8",
@@ -43,9 +46,11 @@
     "prettier": "^2.2.1",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
+    "react-feather": "^2.0.9",
     "shelljs": "^0.8.4",
     "styled-components": "^5.2.3",
     "ts-node": "^9.1.1",
     "typescript": "^4.2.3"
-  }
+  },
+  "version": "0.0.0"
 }

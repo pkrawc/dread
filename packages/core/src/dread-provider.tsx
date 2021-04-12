@@ -1,9 +1,10 @@
-import React, { PropsWithChildren, useState } from "react"
+import React, { PropsWithChildren, useMemo, useState } from "react"
 import { ThemeProvider } from "styled-components"
 import css, { SystemStyleObject } from "@styled-system/css"
 import { dreadTheme } from "./theme"
 import { Base } from "./base"
 import { DeepPartial } from "./types"
+import merge from "lodash.merge"
 
 export type SXObject = SystemStyleObject & { text?: string | string[] }
 
@@ -28,8 +29,9 @@ export function DreadProvider({
   children,
 }: PropsWithChildren<ProviderProps>) {
   const [colorPreference, setPreference] = useState("light")
+  const theme = useMemo(() => merge({}, dreadTheme, customTheme), [customTheme])
   return (
-    <ThemeProvider theme={{ ...dreadTheme, ...customTheme }}>
+    <ThemeProvider theme={theme}>
       <Base />
       {children}
     </ThemeProvider>
