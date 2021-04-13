@@ -1,0 +1,28 @@
+name: Update Packages
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@latest
+      - uses: actions/setup-node@latest
+        with:
+          version: 14
+      - run: yarn install --frozen-lockfile
+      - run: yarn build
+  test:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - run: yarn test
+  release:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - run: yarn release
+    env:
+          NODE_AUTH_TOKEN: ${{secrets.NPM_AUTH_TOKEN}}
