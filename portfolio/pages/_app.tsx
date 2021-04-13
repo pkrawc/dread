@@ -19,6 +19,7 @@ export default function App({ Component, pageProps }: AppProps) {
         style: "rounded",
         fonts: { body: "Crimson Pro" },
         space: [0, 8, 16, 32, 48],
+        containerSize: "60rem",
       }}
     >
       <DefaultSeo {...seo} />

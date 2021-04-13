@@ -39,14 +39,15 @@ export default class Document extends NextDoc {
         <Head>
           <meta charSet="utf-8" />
           <meta name="theme-color" content="#07456f" />
-          {/* <link rel="icon" type="image/x-icon" href="/images/favicon.ico" />
-          <link rel="icon" type="image/png" href="/images/favicon.png" /> */}
-          {this.props.styles}
           <link
             rel="stylesheet"
             href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,200..900;1,200..600&display=swap"
           />
-          {/* <link rel="stylesheet" href="/styles/material-ocean-theme.css" /> */}
+          <link
+            rel="stylesheet"
+            href="https://fonts.googleapis.com/icon?family=Material+Icons"
+          />
+          {this.props.styles}
         </Head>
         <body>
           <Main />

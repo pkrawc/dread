@@ -70,10 +70,7 @@ export default function HomePage({ projects }: { projects: Project[] }) {
             Experiences that are <s>un</s>forgettable.
           </Box>
           <Box as="p">
-            &#128075; I'm Patrick, a{" "}
-            <Definition description="helosldkfj">
-              <b>Product Developer</b>
-            </Definition>{" "}
+            &#128075; I'm Patrick, a <b>Product Developer</b>
             living in <b>Chicago</b>. My focus is on progressive web apps. You
             can mess around with some of my experiments to the left or check out
             some of my products in the wild below.
