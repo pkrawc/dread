@@ -4,7 +4,7 @@
   "name": "dread",
   "description": "Dreadful design system monorepo",
   "scripts": {
-    "bootstrap": "yarn && lerna bootstrap",
+    "boot": "yarn && lerna bootstrap",
     "build": "lerna run --stream build --ignore @dread/portfolio",
     "build:dev": "lerna run --stream build:dev",
     "build:storybook": "build-storybook",
