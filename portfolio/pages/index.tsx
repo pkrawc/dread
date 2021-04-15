@@ -1,8 +1,9 @@
-import { Fragment } from "react"
 import glob from "glob"
+import { Fragment } from "react"
 import { GetStaticProps } from "next"
 import { Box, Container } from "@dread/core"
 import { getMdx } from "@utils/get-mdx"
+import { Device } from "@components"
 
 function getTime(dateString: string) {
   return new Date(dateString).getTime()
@@ -46,18 +47,19 @@ export default function HomePage({ projects }: { projects: Project[] }) {
         sx={{
           display: "grid",
           gridAutoFlow: "dense",
-          gridTemplateColumns: "minmax(auto, 22rem) 1fr",
-          height: "max(60vh, 30rem)",
+          gridTemplateColumns: ["auto", "auto", "minmax(auto, 22rem) 1fr"],
+          minHeight: "max(60vh, 30rem)",
           gap: "2rem",
           alignItems: "center",
           my: "2rem",
+          perspectiveOrigin: "top left",
+          perspective: [0, 0, 500],
         }}
       >
-        <Box className="device" sx={{ gridColumn: ["span 2", "span 1"] }} />
+        <Device src="https://dreadful.design/" />
         <Box
           className="hero"
           sx={{
-            gridColumn: ["span 2", "span 1"],
             display: "flex",
             flexDirection: "column",
             gap: "1rem",
@@ -70,10 +72,10 @@ export default function HomePage({ projects }: { projects: Project[] }) {
             Experiences that are <s>un</s>forgettable.
           </Box>
           <Box as="p">
-            &#128075; I'm Patrick, a <b>Product Developer</b>
-            living in <b>Chicago</b>. My focus is on progressive web apps. You
-            can mess around with some of my experiments to the left or check out
-            some of my products in the wild below.
+            &#128075; I'm Patrick, a <b>Product Developer</b> living in{" "}
+            <b>Chicago</b>. My focus is on progressive web apps. You can mess
+            around with some of my experiments to the left or check out some of
+            my products in the wild below.
           </Box>
         </Box>
       </Container>
@@ -86,6 +88,9 @@ export default function HomePage({ projects }: { projects: Project[] }) {
           gap: "2rem",
         }}
       >
+        <Box as="h2" sx={{ text: "subtitle" }}>
+          Current Projects
+        </Box>
         {projects.map((project) => (
           <Project key={project.slug} {...project} />
         ))}
@@ -101,11 +106,13 @@ function Project({ slug, headline, description }: Project) {
       sx={{
         borderRadius: 4,
         p: "2rem",
+        mx: "-2rem",
         cursor: "pointer",
         transition: "200ms",
         "&:hover": {
           bg: "bgSecondary",
           color: "textSecondary",
+          transform: "translateY(-0.5rem) scale(1.025)",
         },
       }}
     >

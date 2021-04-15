@@ -1,5 +1,11 @@
 {
   "extends": "../tsconfig.base.json",
-  "compilerOptions": { "baseUrl": ".", "paths": { "@utils/*": ["utils/*"] } },
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@utils/*": ["utils/*"],
+      "@components": ["components/index.ts"]
+    }
+  },
   "include": ["next-env.d.ts", "./**/*.ts", "./**/*.tsx"]
 }
