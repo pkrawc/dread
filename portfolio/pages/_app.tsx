@@ -5,7 +5,8 @@ import { initialize, pageview } from "react-ga"
 import { DefaultSeo } from "next-seo"
 import { DreadProvider } from "@dread/core"
 import seo from "seo.config"
-import "styles/base.css"
+import "@styles/base.css"
+import { SiteHeader } from "@components"
 
 export default function App({ Component, pageProps }: AppProps) {
   const router = useRouter()
@@ -23,6 +24,7 @@ export default function App({ Component, pageProps }: AppProps) {
       }}
     >
       <DefaultSeo {...seo} />
+      <SiteHeader />
       <Component {...pageProps} />
     </DreadProvider>
   )

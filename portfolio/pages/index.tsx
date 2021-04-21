@@ -2,7 +2,7 @@ import glob from "glob"
 import { Fragment } from "react"
 import { GetStaticProps } from "next"
 import { Box, Container } from "@dread/core"
-import { getMdx } from "@utils/get-mdx"
+import { getMdx } from "src/utils/get-mdx"
 import { Device } from "@components"
 
 function getTime(dateString: string) {
@@ -23,7 +23,7 @@ type StaticProps = {
 export const getStaticProps: GetStaticProps<StaticProps> = async function (
   context
 ) {
-  const projects = getMdx(glob.sync("content/projects/*.mdx"))
+  const projects = getMdx(glob.sync("src/content/projects/*.mdx"))
   const projectList = projects
     .sort((a, b) => getTime(b.data.date) - getTime(a.data.date))
     .map(({ data: { title, description, headline }, slug }) => ({
@@ -44,11 +44,12 @@ export default function HomePage({ projects }: { projects: Project[] }) {
     <Fragment>
       <Container
         as="section"
+        className="hero"
         sx={{
           display: "grid",
           gridAutoFlow: "dense",
           gridTemplateColumns: ["auto", "auto", "minmax(auto, 22rem) 1fr"],
-          minHeight: "max(60vh, 30rem)",
+          minHeight: "max(10vh, 20rem)",
           gap: "2rem",
           alignItems: "center",
           my: "2rem",
@@ -56,16 +57,18 @@ export default function HomePage({ projects }: { projects: Project[] }) {
           perspective: [0, 0, 500],
         }}
       >
-        <Device src="https://dreadful.design/" />
+        <Box sx={{ perspectiveOrigin: "top center", perspective: [0, 0, 500] }}>
+          <Device src="https://transit.dreadful.design" />
+        </Box>
         <Box
-          className="hero"
           sx={{
             display: "flex",
             flexDirection: "column",
             gap: "1rem",
+            gridRow: ["1", "1", "auto"],
           }}
         >
-          <Box as="h1" sx={{ text: "hero" }}>
+          <Box as="h1" sx={{ text: ["headline", "hero"] }}>
             Dreadful Design
           </Box>
           <Box as="h2" sx={{ text: "subtitle" }}>

@@ -9,21 +9,22 @@ interface DeviceProps {
 export function Device({ src, ...props }: DeviceProps) {
   const mouseX = useMotionValue(0)
   const mouseY = useMotionValue(0)
-  const x = useTransform(mouseX, [200, 1200], [-10, 10])
-  const y = useTransform(mouseY, [200, 800], [5, -5])
-  function handleMouseMove({ clientX, clientY }: MouseEvent) {
+  const x = useTransform(mouseX, [200, 600], [0, 5])
+  const y = useTransform(mouseY, [200, 400], [2.5, 0])
+  function handleMouseMove(event: MouseEvent) {
+    const { clientX, clientY } = event
     mouseX.set(clientX)
     mouseY.set(clientY)
   }
   useEffect(() => {
-    document.body.addEventListener("mousemove", handleMouseMove)
-    return () => document.body.removeEventListener("mousemove", handleMouseMove)
+    window.addEventListener("mousemove", handleMouseMove)
+    return () => window.removeEventListener("mousemove", handleMouseMove)
   }, [])
   return (
     <Box
       {...props}
       as={motion.figure}
-      initial={{ scale: 0.8 }}
+      initial={{ scale: 1 }}
       style={{
         rotateX: y,
         rotateY: x,
@@ -32,12 +33,14 @@ export function Device({ src, ...props }: DeviceProps) {
         position: "relative",
         borderRadius: "1rem",
         bg: "accent",
-        paddingTop: "180%",
-        height: 0,
-        width: "100%",
+        aspectRatio: "6 / 13",
+        height: "auto",
         overflow: "hidden",
         transformStyle: "preserve-3d",
         boxShadow: "0 24px 24px -24px rgba(0,0,0,0.24)",
+        border: "0.5rem solid transparent",
+        borderColor: "text",
+        borderWidth: "2rem 0.5rem",
       }}
     >
       <Box
