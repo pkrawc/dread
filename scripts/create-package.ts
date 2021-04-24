@@ -23,7 +23,7 @@ const packageJson = `
     "build": "microbundle --jsx React.createElement",
     "build:dev": "microbundle --jsx React.createElement --no-compress",
     "watch": "microbundle watch --no-compress --jsx React.createElement",
-    "prepublish":"npm run build",
+    "prepare":"npm run build",
     "watch:test": "jest --watch"
   },
   "publishConfig": {
