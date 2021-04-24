@@ -12,6 +12,7 @@
     "test": "jest",
     "build": "microbundle --jsx React.createElement",
     "build:dev": "microbundle --jsx React.createElement --no-compress",
+    "prepublish":"npm run build",
     "watch": "microbundle watch --no-compress --jsx React.createElement",
     "watch:test": "jest --watch"
   },
