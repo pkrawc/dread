@@ -1,4 +1,3 @@
-import { CSSObject } from "@styled-system/css"
 import { HTMLAttributes } from "react"
 import styled from "styled-components"
 import { sx, SXObject } from "./dread-provider"

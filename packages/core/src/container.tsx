@@ -1,6 +1,5 @@
 import css from "@styled-system/css"
 import styled from "styled-components"
-import { system } from "styled-system"
 import { sx, SXObject } from "./dread-provider"
 
 interface ContainerProps {
