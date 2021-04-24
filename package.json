@@ -15,7 +15,7 @@
     "start:portfolio": "lerna run --stream --scope @dread/portfolio dev",
     "start:storybook": "start-storybook --port 8080 --quiet",
     "test": "jest",
-    "update-version": "lerna version --no-push --no-private",
+    "graduate": "lerna version --no-push --no-private",
     "release": "lerna publish from-package --yes"
   },
   "author": "Patrick <patrick@dreadful.design>",
