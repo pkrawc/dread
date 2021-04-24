@@ -19,10 +19,19 @@
     "release": "lerna publish from-package --yes"
   },
   "author": "Patrick <patrick@dreadful.design>",
-  "workspaces": [
-    "packages/*",
-    "portfolio"
-  ],
+  "workspaces": {
+    "packages": [
+      "packages/*",
+      "portfolio"
+    ],
+    "nohoist": [
+      "@emotion/core/types",
+      "**/@emotion/core/types",
+      "**/@types/theme-ui",
+      "**/@types/theme-ui/**",
+      "**/@types/theme-ui__components"
+    ]
+  },
   "prettier": {
     "semi": false
   },
