@@ -1,6 +1,6 @@
 {
   "name": "@dread/utils",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Utility functions for dread design",
   "source": "src/index.ts",
   "main": "dist/index.js",
@@ -12,7 +12,7 @@
     "test": "jest",
     "build": "microbundle --jsx React.createElement",
     "build:dev": "microbundle --jsx React.createElement --no-compress",
-    "prepare":"npm run build",
+    "prepare": "npm run build",
     "watch": "microbundle watch --no-compress --jsx React.createElement",
     "watch:test": "jest --watch"
   },
