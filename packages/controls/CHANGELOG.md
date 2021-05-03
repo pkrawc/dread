@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.1.5](/compare/@dread/controls@0.1.4...@dread/controls@0.1.5) (2021-05-03)
+
+
+### Bug Fixes
+
+* build defaults to preact if no jsx is chosen dd36418
+
+
+
+
+
 ## [0.1.4](/compare/@dread/controls@0.1.3...@dread/controls@0.1.4) (2021-05-03)
 
 
