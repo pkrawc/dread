@@ -1,5 +1,6 @@
 import { forwardRef, InputHTMLAttributes } from "react"
 import { Box, SXObject } from "@dread/core"
+import { useCheckbox } from "./use-controls"
 
 interface CheckboxProps extends InputHTMLAttributes<HTMLInputElement> {
   label?: string
@@ -7,7 +8,8 @@ interface CheckboxProps extends InputHTMLAttributes<HTMLInputElement> {
 }
 
 export const Checkbox = forwardRef<HTMLInputElement, CheckboxProps>(
-  function Checkbox({ sx = {}, label, ...props }, ref) {
+  function Checkbox({ sx = {}, ...props }, ref) {
+    const { input, label, error } = useCheckbox({ ...props, ref })
     return (
       <Box
         as="label"
@@ -22,7 +24,7 @@ export const Checkbox = forwardRef<HTMLInputElement, CheckboxProps>(
           ...sx,
         }}
       >
-        <Box {...props} ref={ref} as="input" type="checkbox" hidden />
+        <Box {...input} />
         <Box
           as="svg"
           viewBox="0 0 24 24"
@@ -46,11 +48,7 @@ export const Checkbox = forwardRef<HTMLInputElement, CheckboxProps>(
         >
           <polyline points="20 6 9 17 4 12"></polyline>
         </Box>
-        {label && (
-          <Box as="span" sx={{ text: "body" }}>
-            {label}
-          </Box>
-        )}
+        {label && <Box {...label} as="span" sx={{ text: "body" }} />}
       </Box>
     )
   }

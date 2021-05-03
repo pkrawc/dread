@@ -36,3 +36,31 @@ export function useInput({
     },
   }
 }
+
+export function useCheckbox({
+  label,
+  ref,
+  error,
+  defaultChecked,
+  checked,
+  onChange = noop,
+  ...props
+}: any) {
+  const [isChecked, setChecked] = useState(!!checked || !!defaultChecked)
+  function handleChange(evt: ChangeEvent<HTMLInputElement>) {
+    setChecked(evt.target.checked)
+  }
+  return {
+    label: { children: label, role: "label", id: "label-id" },
+    input: {
+      ...props,
+      ref,
+      hidden: true,
+      type: "checkbox",
+      as: "input",
+      checked: isChecked,
+      onChange: wrapEvent(onChange, handleChange),
+    },
+    error: { children: error, role: "alert" },
+  }
+}

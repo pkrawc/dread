@@ -35,3 +35,34 @@ export const Radio = memo(
     )
   })
 )
+
+// const RadioGroupContext = createContext({})
+
+// type RadioGroupState = {
+//   values: string[]
+//   name: string
+// }
+
+// function radioGroupReducer(
+//   state: RadioGroupState,
+//   action: Partial<RadioGroupState>
+// ) {
+//   return { ...state, ...action }
+// }
+
+// interface RadioGroupProps {
+//   name: string
+// }
+
+// export function RadioGroup(props: PropsWithChildren<RadioGroupProps>) {
+//   const [state, dispatch] = useReducer(radioGroupReducer, {
+//     values: [],
+//     name: props.name,
+//   })
+//   const value = useMemo(() => ({ ...state, dispatch }), [state])
+//   return (
+//     <RadioGroupContext.Provider value={value}>
+//       {props.children}
+//     </RadioGroupContext.Provider>
+//   )
+// }
