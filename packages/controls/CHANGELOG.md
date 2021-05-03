@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.1.3](/compare/@dread/controls@0.1.2...@dread/controls@0.1.3) (2021-05-03)
+
+**Note:** Version bump only for package @dread/controls
+
+
+
+
+
 ## [0.1.2](/compare/@dread/controls@0.1.1...@dread/controls@0.1.2) (2021-04-24)
 
 **Note:** Version bump only for package @dread/controls
