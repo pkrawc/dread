@@ -20,9 +20,9 @@ const packageJson = `
   "files": [ "dist" ],
   "scripts": {
     "test": "jest",
-    "build": "microbundle --jsx React.createElement",
-    "build:dev": "microbundle --jsx React.createElement --no-compress",
-    "watch": "microbundle watch --no-compress --jsx React.createElement",
+    "build": "rm -rf dist && microbundle",
+    "build:dev": "microbundle --no-compress",
+    "watch": "microbundle watch --no-compress",
     "prepare":"npm run build",
     "watch:test": "jest --watch"
   },
