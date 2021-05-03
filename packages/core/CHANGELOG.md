@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.1.3](/compare/@dread/core@0.1.2...@dread/core@0.1.3) (2021-05-03)
+
+
+### Bug Fixes
+
+* update build scripts c335675
+
+
+
+
+
 ## [0.1.2](/compare/@dread/core@0.1.1...@dread/core@0.1.2) (2021-04-24)
 
 **Note:** Version bump only for package @dread/core
