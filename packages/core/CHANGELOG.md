@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.1.5](/compare/@dread/core@0.1.4...@dread/core@0.1.5) (2021-05-04)
+
+
+### Bug Fixes
+
+* remove unused function ae9082a
+
+
+
+
+
 ## [0.1.4](/compare/@dread/core@0.1.3...@dread/core@0.1.4) (2021-05-03)
 
 
