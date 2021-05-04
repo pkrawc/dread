@@ -88,5 +88,3 @@ export const dreadTheme = {
     },
   },
 }
-
-function createTheme(customTheme: Partial<typeof dreadTheme>) {}
