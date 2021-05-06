@@ -16,6 +16,8 @@ const packageJson = `
   "description": "${description}",
   "source": "src/index.ts",
   "main": "dist/index.js",
+  "module": "dist/index.esm.js",
+  "esmodule": "dist/index.modern.js",
   "types": "dist/index.d.ts",
   "files": [ "dist" ],
   "scripts": {
