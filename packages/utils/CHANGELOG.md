@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.1.4](/compare/@dread/utils@0.1.3...@dread/utils@0.1.4) (2021-05-11)
+
+
+### Bug Fixes
+
+* add module files fa535be
+
+
+
+
+
 ## [0.1.3](/compare/@dread/utils@0.1.2...@dread/utils@0.1.3) (2021-05-03)
 
 
