@@ -1,6 +1,6 @@
+import React, { InputHTMLAttributes } from "react"
 import { Box, SXObject } from "@dread/core"
 import { wrapEvent } from "@dread/utils"
-import { InputHTMLAttributes } from "react"
 
 interface SliderProps extends InputHTMLAttributes<HTMLInputElement> {
   sx?: SXObject

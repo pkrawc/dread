@@ -1,4 +1,4 @@
-import { forwardRef, InputHTMLAttributes, memo } from "react"
+import React, { forwardRef, InputHTMLAttributes, memo } from "react"
 import { Box, SXObject } from "@dread/core"
 
 interface ChipProps extends InputHTMLAttributes<HTMLInputElement> {

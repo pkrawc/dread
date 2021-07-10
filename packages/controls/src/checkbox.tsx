@@ -1,4 +1,4 @@
-import { forwardRef, InputHTMLAttributes } from "react"
+import React, { forwardRef, InputHTMLAttributes } from "react"
 import { Box, SXObject } from "@dread/core"
 import { useCheckbox } from "./use-controls"
 

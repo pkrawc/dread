@@ -1,4 +1,4 @@
-import { forwardRef, InputHTMLAttributes, memo } from "react"
+import React, { forwardRef, InputHTMLAttributes, memo } from "react"
 import clsx from "clsx"
 import { Box, SXObject } from "@dread/core"
 import { useInput } from "./use-controls"

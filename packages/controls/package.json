@@ -4,7 +4,7 @@
   "description": "Control components for the dreaful design system.",
   "source": "src/index.ts",
   "main": "dist/index.js",
-  "module": "dist/index.esm.js",
+  "module": "dist/index.esm.mjs",
   "esmodule": "dist/index.modern.js",
   "types": "dist/index.d.ts",
   "files": [
