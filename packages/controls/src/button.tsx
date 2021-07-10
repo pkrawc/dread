@@ -33,10 +33,10 @@ export const Button = styled.button<ButtonProps>(
       primary: css({
         bg: "primary",
         borderColor: "primary",
-        color: "bg",
+        color: "background",
         "&:hover, &:focus": {
-          bg: "primaryDark",
-          borderColor: "primaryDark",
+          bg: "primary",
+          borderColor: "primary",
         },
       }),
       standard: css({
@@ -45,7 +45,7 @@ export const Button = styled.button<ButtonProps>(
         color: "primary",
         "&:hover, &:focus": {
           bg: "primary",
-          color: "bg",
+          color: "background",
         },
       }),
       subtle: css({

@@ -19,7 +19,7 @@ export const Switch = forwardRef<HTMLInputElement, SwitchProps>(function Switch(
           bg: "text",
         },
         "& input:checked ~ .track .slider": {
-          bg: "bg",
+          bg: "background",
           borderColor: "text",
           transform: "translateX(100%)",
         },
@@ -39,7 +39,7 @@ export const Switch = forwardRef<HTMLInputElement, SwitchProps>(function Switch(
           width: "4rem",
           height: "2rem",
           borderRadius: "2rem",
-          bg: "bgSecondary",
+          bg: "muted",
           transition: "120ms",
           willChange: "background-color",
         }}
@@ -49,10 +49,10 @@ export const Switch = forwardRef<HTMLInputElement, SwitchProps>(function Switch(
           sx={{
             width: "2rem",
             height: "2rem",
-            bg: "textSecondary",
+            bg: "secondary",
             borderRadius: "50%",
             border: "4px solid transparent",
-            borderColor: "bgSecondary",
+            borderColor: "muted",
             transition: "120ms",
             transform: "translateX(0)",
             willChange: "background-color, transform, border-color",

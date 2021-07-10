@@ -18,7 +18,7 @@ export const Chip = memo(
           position: "relative",
           "& input:checked ~ .chip": {
             bg: "text",
-            color: "bg",
+            color: "background",
           },
           ...sx,
         }}
@@ -32,7 +32,7 @@ export const Chip = memo(
             py: "0.5rem",
             px: "1rem",
             borderRadius: "4rem",
-            bg: "bgSecondary",
+            bg: "muted",
             cursor: "pointer",
           }}
         >

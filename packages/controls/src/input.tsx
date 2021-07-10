@@ -94,7 +94,7 @@ export const Input = memo(
             as="span"
             className="error"
             sx={{
-              color: "error",
+              color: "highlight",
               mr: "auto",
               text: "small",
             }}

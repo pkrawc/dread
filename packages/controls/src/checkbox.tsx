@@ -15,11 +15,11 @@ export const Checkbox = forwardRef<HTMLInputElement, CheckboxProps>(
         as="label"
         sx={{
           position: "relative",
-          display: label ? "flex" : "inline-flex",
+          display: "inline-flex",
           gap: "1rem",
           "& input:checked ~ .checkbox": {
             bg: "text",
-            stroke: "bg",
+            stroke: "background",
           },
           ...sx,
         }}
