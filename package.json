@@ -23,43 +23,36 @@
     "packages": [
       "packages/*",
       "portfolio"
-    ],
-    "nohoist": [
-      "@emotion/core/types",
-      "**/@emotion/core/types",
-      "**/@types/theme-ui",
-      "**/@types/theme-ui/**",
-      "**/@types/theme-ui__components"
     ]
   },
   "prettier": {
     "semi": false
   },
   "devDependencies": {
-    "@babel/core": "^7.13.10",
-    "@storybook/addon-actions": "^6.1.21",
-    "@storybook/addon-essentials": "^6.1.21",
-    "@storybook/addon-links": "^6.1.21",
-    "@storybook/react": "^6.1.21",
+    "@babel/core": "^7.14.6",
+    "@storybook/addon-actions": "^6.3.4",
+    "@storybook/addon-essentials": "^6.3.4",
+    "@storybook/addon-links": "^6.3.4",
+    "@storybook/react": "^6.3.4",
     "@types/lodash.merge": "^4.6.6",
-    "@types/node": "^14.14.32",
-    "@types/react": "^17.0.3",
-    "@types/shelljs": "^0.8.8",
-    "@types/styled-components": "^5.1.7",
-    "@types/styled-system": "^5.1.10",
-    "@types/styled-system__css": "^5.0.14",
+    "@types/node": "^16.3.1",
+    "@types/react": "^17.0.14",
+    "@types/shelljs": "^0.8.9",
+    "@types/styled-components": "^5.1.11",
+    "@types/styled-system": "^5.1.12",
+    "@types/styled-system__css": "^5.0.16",
     "babel-loader": "^8.2.2",
-    "concurrently": "^6.0.0",
+    "concurrently": "^6.2.0",
     "lerna": "^4.0.0",
-    "microbundle": "^0.13.0",
-    "prettier": "^2.2.1",
+    "microbundle": "^0.13.3",
+    "prettier": "^2.3.2",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "react-feather": "^2.0.9",
     "shelljs": "^0.8.4",
-    "styled-components": "^5.2.3",
-    "ts-node": "^9.1.1",
-    "typescript": "^4.2.3"
+    "styled-components": "^5.3.0",
+    "ts-node": "^10.1.0",
+    "typescript": "^4.3.5"
   },
   "version": "0.0.0"
 }
