@@ -20,5 +20,5 @@ jobs:
         run: yarn test
       - name: Release
         run: yarn release
-      env:
-          NODE_AUTH_TOKEN: ${{secrets.NPM_AUTH_TOKEN}}
+    env:
+        NODE_AUTH_TOKEN: ${{secrets.NPM_AUTH_TOKEN}}
