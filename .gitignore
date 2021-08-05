@@ -3,6 +3,7 @@ node_modules
 
 # Package Files
 dist
+packages/LICENSE.md
 
 # Portfolio Files
 .next
