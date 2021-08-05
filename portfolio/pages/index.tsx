@@ -2,7 +2,7 @@ import glob from "glob"
 import { Fragment } from "react"
 import { GetStaticProps } from "next"
 import { Box, Container } from "@dread/core"
-import { getMdx } from "src/utils/get-mdx"
+import { getMdx } from "@utils/mdx"
 import { Device } from "@components"
 
 function getTime(dateString: string) {
@@ -91,7 +91,7 @@ export default function HomePage({ projects }: { projects: Project[] }) {
           gap: "2rem",
         }}
       >
-        <Box as="h2" sx={{ text: "subtitle" }}>
+        <Box as="h2" sx={{ text: "subtitle", mt: "4rem" }}>
           Current Projects
         </Box>
         {projects.map((project) => (

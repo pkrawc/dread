@@ -1,4 +1,3 @@
-import React from "react"
 import styled from "styled-components"
 import css from "@styled-system/css"
 import { variant } from "styled-system"
@@ -23,9 +22,8 @@ export const Button = styled.button<ButtonProps>(
     variant: "text.button",
     transition: "300ms",
     "&:focus": {
-      outlineWidth: 1,
-      outlineStyle: "solid",
-      outlineColor: "primary",
+      outline: ({ colors }) => `2px solid ${colors.primary}`,
+      outlineOffset: "0.25rem",
     },
   }),
   variant({

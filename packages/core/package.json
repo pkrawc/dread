@@ -11,11 +11,11 @@
     "dist"
   ],
   "scripts": {
-    "test": "jest",
-    "build": "rm -rf dist && microbundle --jsx React.createElement",
-    "build:dev": "microbundle  --no-compress --jsx React.createElement",
-    "prepare": "npm run build",
-    "watch": "microbundle watch --no-compress --jsx React.createElement",
+    "build": "yarn run mb",
+    "mb": "microbundle --jsx 'React.createElement' --jsxImportSource react --globals react/jsx-runtime=jsx",
+    "prepack": "yarn build",
+    "test": "echo 'run tests from the root directory'",
+    "watch": "yarn run mb watch --no-compress",
     "watch:test": "jest --watch"
   },
   "publishConfig": {

@@ -2,7 +2,7 @@ import * as fs from "fs"
 import matter from "gray-matter"
 
 function formatPath(path: string) {
-  return path.replace(/\.\/content/, "").replace(/\.mdx/, "")
+  return path.replace(/\.\/src\/content/, "").replace(/\.mdx/, "")
 }
 
 export function getMdx(files: string[]) {

@@ -4,7 +4,7 @@
   "name": "dread",
   "description": "Dreadful design system monorepo",
   "scripts": {
-    "boot": "yarn && lerna bootstrap",
+    "boot": "yarn add -W lerna && lerna bootstrap",
     "build": "lerna run --stream build --ignore @dread/portfolio",
     "build:dev": "lerna run --stream build:dev",
     "build:storybook": "build-storybook",
@@ -12,7 +12,7 @@
     "create": "ts-node ./scripts/create-package.ts",
     "start": "concurrently -n microbundle,storybook \"yarn start:packages\" \"yarn start:storybook\"",
     "start:packages": "lerna run --parallel watch",
-    "start:portfolio": "lerna run --stream --scope @dread/portfolio dev",
+    "start:portfolio": "yarn workspace @dread/portfolio dev",
     "start:storybook": "start-storybook --port 8080 --quiet",
     "test": "jest",
     "graduate": "lerna version --no-push --no-private",
@@ -23,20 +23,23 @@
     "packages": [
       "packages/*",
       "portfolio"
+    ],
+    "nohoist": [
+      "**/esbuild"
     ]
   },
   "prettier": {
     "semi": false
   },
   "devDependencies": {
-    "@babel/core": "^7.14.6",
-    "@storybook/addon-actions": "^6.3.4",
-    "@storybook/addon-essentials": "^6.3.4",
-    "@storybook/addon-links": "^6.3.4",
-    "@storybook/react": "^6.3.4",
+    "@babel/core": "^7.14.8",
+    "@storybook/addon-actions": "^6.3.6",
+    "@storybook/addon-essentials": "^6.3.6",
+    "@storybook/addon-links": "^6.3.6",
+    "@storybook/react": "^6.3.6",
     "@types/lodash.merge": "^4.6.6",
-    "@types/node": "^16.3.1",
-    "@types/react": "^17.0.14",
+    "@types/node": "^16.4.9",
+    "@types/react": "^17.0.15",
     "@types/shelljs": "^0.8.9",
     "@types/styled-components": "^5.1.11",
     "@types/styled-system": "^5.1.12",
@@ -53,6 +56,5 @@
     "styled-components": "^5.3.0",
     "ts-node": "^10.1.0",
     "typescript": "^4.3.5"
-  },
-  "version": "0.0.0"
+  }
 }

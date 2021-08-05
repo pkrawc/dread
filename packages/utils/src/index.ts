@@ -1,4 +1,4 @@
-import { EventHandler, Ref, RefObject } from "react"
+import { EventHandler } from "react"
 
 export function wrapEvent(
   original: EventHandler<any>,
@@ -29,4 +29,33 @@ function assignRef(ref: any, value: any) {
 
 export function mergeRefs(...refs: any) {
   return (value: any) => refs.forEach((ref: any) => assignRef(ref, value))
+}
+
+export function isScrollable(node: HTMLElement) {
+  const regex = /(auto|scroll)/
+  const style = getComputedStyle(node, null)
+  if (style.position === "relative") return true
+  return regex.test(style.overflow + style.overflowY)
+}
+
+export function closestScrollable(element: HTMLElement) {
+  let parent = element
+  while (parent?.parentElement) {
+    parent = parent.parentElement
+    if (isScrollable(parent)) return parent
+  }
+  return typeof document === "undefined" ? null : document.body
+}
+
+export function getFocusable(element: HTMLElement) {
+  const query = `
+    a[href],
+    button:not([disabled]),
+    input:not([type="hidden"]):not([disabled]),
+    textarea:not([disabled]),
+    select:not([disabled]),
+    details,
+    [tabindex]:not([tabindex="-1"])
+  `
+  return element.querySelectorAll(query)
 }

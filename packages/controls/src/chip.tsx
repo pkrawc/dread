@@ -1,44 +1,42 @@
-import React, { forwardRef, InputHTMLAttributes, memo } from "react"
+import { forwardRef, HTMLProps } from "react"
 import { Box, SXObject } from "@dread/core"
 
-interface ChipProps extends InputHTMLAttributes<HTMLInputElement> {
+interface ChipProps extends HTMLProps<HTMLInputElement> {
   sx?: SXObject
   type?: "radio" | "checkbox"
 }
 
-export const Chip = memo(
-  forwardRef<HTMLInputElement, ChipProps>(function Chip(
-    { sx = {}, children, type = "checkbox", ...props },
-    ref
-  ) {
-    return (
+export const Chip = forwardRef<HTMLInputElement, ChipProps>(function Chip(
+  { sx = {}, children, type = "checkbox", ...props },
+  ref
+) {
+  return (
+    <Box
+      as="label"
+      sx={{
+        position: "relative",
+        "& input:checked ~ .chip": {
+          bg: "text",
+          color: "background",
+        },
+        ...sx,
+      }}
+    >
+      <Box {...props} ref={ref} as="input" type={type} hidden />
       <Box
-        as="label"
+        className="chip"
         sx={{
-          position: "relative",
-          "& input:checked ~ .chip": {
-            bg: "text",
-            color: "background",
-          },
-          ...sx,
+          display: "inline-flex",
+          gap: "1rem",
+          py: "0.5rem",
+          px: "1rem",
+          borderRadius: "4rem",
+          bg: "muted",
+          cursor: "pointer",
         }}
       >
-        <Box {...props} ref={ref} as="input" type={type} hidden />
-        <Box
-          className="chip"
-          sx={{
-            display: "inline-flex",
-            gap: "1rem",
-            py: "0.5rem",
-            px: "1rem",
-            borderRadius: "4rem",
-            bg: "muted",
-            cursor: "pointer",
-          }}
-        >
-          {children}
-        </Box>
+        {children}
       </Box>
-    )
-  })
-)
+    </Box>
+  )
+})

@@ -41,6 +41,7 @@ export function Device({ src, ...props }: DeviceProps) {
         border: "0.5rem solid transparent",
         borderColor: "text",
         borderWidth: "2rem 0.5rem",
+        maxHeight: "75vh",
       }}
     >
       <Box

@@ -1,7 +1,26 @@
-import css from "@styled-system/css"
 import styled from "styled-components"
+import css, { SystemStyleObject } from "@styled-system/css"
 import { system } from "styled-system"
-import { sx, SXObject } from "./dread-provider"
+
+export type SXObject = SystemStyleObject & { text?: string | string[] }
+
+export const sx = ({ sx = {} }: { sx?: SXObject }) => {
+  const { text, ...styleProps } = sx
+  if (text) {
+    const textArray = Array.isArray(text) ? text : [text]
+    return css({
+      variant: textArray.map((txt) => `text.${txt}`),
+      ...styleProps,
+    })
+  }
+  return css(styleProps)
+}
+
+interface BoxProps {
+  sx?: SXObject
+}
+
+export const Box = styled.div<BoxProps>(sx)
 
 interface GridContainerProps {
   columns?: number
@@ -56,3 +75,16 @@ export const Col = styled.section<ColProps>(
 Col.defaultProps = {
   span: "1 / -1",
 }
+
+interface ContainerProps {
+  sx?: SXObject
+}
+
+export const Container = styled.section<ContainerProps>(
+  css({
+    maxWidth: (theme) => (theme.containerSize ? theme.containerSize : "80rem"),
+    mx: "auto",
+    px: "2rem",
+  }),
+  sx
+)

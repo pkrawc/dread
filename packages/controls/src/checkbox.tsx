@@ -1,8 +1,8 @@
-import React, { forwardRef, InputHTMLAttributes } from "react"
+import { forwardRef, HTMLProps } from "react"
 import { Box, SXObject } from "@dread/core"
 import { useCheckbox } from "./use-controls"
 
-interface CheckboxProps extends InputHTMLAttributes<HTMLInputElement> {
+interface CheckboxProps extends HTMLProps<HTMLInputElement> {
   label?: string
   sx?: SXObject
 }
@@ -13,6 +13,7 @@ export const Checkbox = forwardRef<HTMLInputElement, CheckboxProps>(
     return (
       <Box
         as="label"
+        tabIndex={0}
         sx={{
           position: "relative",
           display: "inline-flex",

@@ -1,4 +1,4 @@
-import React, { forwardRef, InputHTMLAttributes, memo } from "react"
+import { forwardRef, InputHTMLAttributes, memo } from "react"
 import clsx from "clsx"
 import { Box, SXObject } from "@dread/core"
 import { useInput } from "./use-controls"
@@ -15,15 +15,8 @@ export const Input = memo(
     { sx = {}, className, ...props },
     ref
   ) {
-    const {
-      label,
-      error,
-      raised,
-      help,
-      errorProps,
-      helpProps,
-      inputProps,
-    } = useInput({ ...props })
+    const { label, error, raised, help, errorProps, helpProps, inputProps } =
+      useInput({ ...props })
     return (
       <Box
         as="label"

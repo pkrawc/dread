@@ -11,7 +11,7 @@ jobs:
       - uses: actions/checkout@latest
       - uses: actions/setup-node@latest
         with:
-          version: 14
+          version: 16
       - run: yarn install --frozen-lockfile
       - run: yarn build
   test:

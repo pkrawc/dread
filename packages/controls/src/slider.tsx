@@ -1,4 +1,4 @@
-import React, { InputHTMLAttributes } from "react"
+import { InputHTMLAttributes } from "react"
 import { Box, SXObject } from "@dread/core"
 import { wrapEvent } from "@dread/utils"
 

@@ -1,4 +1,4 @@
-import React, { forwardRef, InputHTMLAttributes, memo } from "react"
+import { forwardRef, InputHTMLAttributes, memo } from "react"
 import { Box, SXObject } from "@dread/core"
 
 interface RadioProps extends InputHTMLAttributes<HTMLInputElement> {
