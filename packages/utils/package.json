@@ -1,6 +1,6 @@
 {
   "name": "@dread/utils",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "description": "Utility functions for dread design",
   "source": "src/index.ts",
   "main": "dist/index.js",
