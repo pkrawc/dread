@@ -20,7 +20,7 @@ jobs:
     steps:
       - run: yarn test
   release:
-    needs: build
+    needs: [build, test]
     runs-on: ubuntu-latest
     steps:
       - run: yarn release
