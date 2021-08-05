@@ -2,6 +2,9 @@
   "version": "independent",
   "npmClient": "yarn",
   "registry": "https://registry.npmjs.org/",
+  "publishConfig": {
+    "access": "public"
+  },
   "useWorkspaces": true,
   "packages": [
     "packages/*",

@@ -5,7 +5,8 @@ on:
     branches: [main]
 
 jobs:
-  build_and_release:
+  CR:
+    name: "Build And Release"
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
