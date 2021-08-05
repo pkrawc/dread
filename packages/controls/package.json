@@ -1,6 +1,6 @@
 {
   "name": "@dread/controls",
-  "version": "0.2.2",
+  "version": "0.2.3",
   "description": "Control components for the dreaful design system.",
   "source": "src/index.ts",
   "main": "dist/index.js",
@@ -29,8 +29,8 @@
     "styled-components": "^5.2.1"
   },
   "dependencies": {
-    "@dread/core": "^0.2.2",
-    "@dread/utils": "^0.1.5",
+    "@dread/core": "^0.3.0",
+    "@dread/utils": "^0.1.6",
     "@styled-system/css": "^5.1.5",
     "clsx": "^1.1.1"
   }

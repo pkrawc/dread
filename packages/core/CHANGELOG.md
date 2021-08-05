@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.3.0](https://github.com/pkrawc/dread/compare/@dread/core@0.2.2...@dread/core@0.3.0) (2021-08-05)
+
+
+### Features
+
+* add theme type in core package ([fd3e9cc](https://github.com/pkrawc/dread/commit/fd3e9cc77adfcf59c4bc8529013d266fa591ebd9))
+
+
+
+
+
 ## [0.2.2](https://github.com/pkrawc/dread/compare/@dread/core@0.2.1...@dread/core@0.2.2) (2021-08-05)
 
 **Note:** Version bump only for package @dread/core

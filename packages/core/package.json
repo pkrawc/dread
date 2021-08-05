@@ -1,6 +1,6 @@
 {
   "name": "@dread/core",
-  "version": "0.2.2",
+  "version": "0.3.0",
   "description": "layout components for dread design system.",
   "source": "src/index.ts",
   "main": "dist/index.js",
