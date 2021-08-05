@@ -1,10 +1,11 @@
-import { PropsWithChildren, useMemo, useState } from "react"
+import { PropsWithChildren, useMemo } from "react"
 import { ThemeProvider } from "styled-components"
 import { dreadTheme } from "./theme"
 import { Base } from "./base"
 import { DeepPartial } from "./types"
 import merge from "lodash.merge"
 
+export type DreadTheme = typeof dreadTheme
 interface ProviderProps {
   theme?: DeepPartial<typeof dreadTheme>
 }
