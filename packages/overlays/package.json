@@ -1,10 +1,10 @@
 {
-  "name": "@dread/controls",
-  "version": "0.2.3",
-  "description": "Control components for the dreaful design system.",
+  "name": "@dread/overlays",
+  "version": "0.0.1",
+  "description": "Overlay package for dread design system",
   "source": "src/index.ts",
   "main": "dist/index.js",
-  "module": "dist/index.esm.mjs",
+  "module": "dist/index.esm.js",
   "esmodule": "dist/index.modern.js",
   "types": "dist/index.d.ts",
   "files": [
@@ -31,8 +31,6 @@
   },
   "dependencies": {
     "@dread/core": "^0.3.0",
-    "@dread/utils": "^0.1.6",
-    "@styled-system/css": "^5.1.5",
-    "clsx": "^1.1.1"
+    "@dread/utils": "^0.1.6"
   }
 }
